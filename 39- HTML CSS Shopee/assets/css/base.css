@@ -1,0 +1,143 @@
+:root{
+    --primary-color: #f7432e;
+    --white-color: white;
+    --black-color: black;
+    --text-color: black;
+    --border-color: #dbdbdb;
+
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    /* nghĩa là với những màn hình có kích thước lớn hơn 1200px,
+    thì kích thước tối đa của class grid là 1200px, còn đối với những
+    màn hình có kích thước bé hơn 1200px thì max-width: 100% có tác dụng
+    là điều chỉnh kích thước của class grid là 100% màn hình có kích thước
+    nhỏ hơn 1200px đó.*/
+    margin: 0 auto; /* tự động căn giữa khối này khi nó nằm trong khối khác*/
+
+}
+
+.grid_full-width/* trường hợp nếu ko muốn dùng .grid ở trên */{
+    width: 100%;
+}  
+
+.grid_row{
+    display: flex;
+    flex-wrap: wrap;
+} 
+/*-----------------animation--------------*/
+
+
+/* đây là animation cho các thẻ hình Qr và 2 hình app , được liên kết với bên file main.css chỗ .header__qr*/
+@keyframes fadeIn /* keyframes là thẻ tạo animation, fadeIn là tên tự đặt*/
+{
+from{
+    opacity: 0;
+}
+to{
+    opacity:1;
+}
+/* from opacity 0 to opacity 1 nghĩa là từ khi thuộc tính animation trên được áp dụng , nó sẽ
+có độ opacity là 0 và khi kết thúc animation , độ opacity là 1*/
+}
+
+@keyframes growth{
+    from{ 
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+
+}
+
+
+
+/*modal*/
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal_overlay{
+    position: absolute;/*nghĩa là đây là con của .modal, lấy modal làm gốc*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /*rgba 0,0,0 là màu đen, có 0.3 là độ mờ*/
+
+
+}
+.modal_body{
+    --growth-from: 0.7; /* growth from 0.7 nghĩa là chuyển đổi
+     từ kích thước 70% tới growth to 1 nghĩa là chuyển đến kích thước 100% */
+    --growth-to: 1;
+    margin: auto; /* dòng này kết hợp với display: flex của .modal có tác dụng căn giữa cho .modal_body*/
+    position: relative; /*dòng này để .modal_body sẽ là layer nằm 
+    trên .modal, tìm hiểu thêm về z index : z index càng lớn thì class 
+    chứa z index đó sẽ là layer nằm trước , không cần biết là bên 
+    html , class đó nằm trước hay sau class khác đang so sánh z index*/
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+/* button style*/
+.btn{
+    min-width: 142px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+   padding: 0 12px;
+   outline: none;
+   cursor: pointer;
+   color: var(--text-color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   line-height: 1.6rem;
+
+}
+
+.btn.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn--size-s{
+ height: 32px;
+ font-size: 12px;
+ padding: 0 6px;
+
+}
+
+.btn.btn--primary/*tức là select tới thẻ có cả 2 class à btn và btn--primary, tùy ý có thể
+có cả 3,4... class*/{
+ background-color: var(--primary-color);
+ color: var(--white-color);
+
+}
+.btn.btn--disabled{
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+
+

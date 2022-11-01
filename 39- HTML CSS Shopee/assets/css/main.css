@@ -1,0 +1,443 @@
+.header{
+   height: 120px;
+   background-image: linear-gradient(0,  #fe6332, #f5402d) ;
+}
+
+.header__navbar{
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.header__navbar-list{
+   list-style: none;
+   padding-left:0;
+   margin-top: 4px;
+}
+
+.header__navbar-item{
+   margin: 0 8px; /* trên dưới bằng 0 trái phải bằng 8, là các khoảng cách cảu các chữ trên navbar*/
+  position: relative;
+  min-height: 26px;
+}
+
+.header__navbar-item--has-qr:hover .header__qr
+ /* sủ dụng .header__navbar-item--has-qr:hover để khi rơ chuột vào sẽ hiện lên thẻ header__qr cùng các hình ảnh qr và app trong thẻ đó*/
+/* cách viết .header__navbar-item--has-qr:hover .header__qr có nghĩa là
+các thuộc tính trong dấu {} ở dưới chỉ áp dụng cho .header__qr khi .header__navbar-item--has-qr
+được sủ dụng, có nghĩa là được rơ chuột ( hover) lên thì mới hiện ra hình mã qr và hình 2app*/ 
+{ 
+ display: block; /* hiện lên các hình qr và hình app, trái ngước với display: none là không hiển thị ở bên trên đã viết*/
+}
+
+.header__navbar-item--has-notify:hover .header__notify{
+   display: block;
+}
+
+
+.header__navbar-item, 
+.header__navbar-item-link {
+   display: inline-block; /* các thẻ li nằm trên cùng một hàng */
+   font-size: 1.4rem;
+   color: var(--white-color);
+   text-decoration: none;/* bỏ gạch chân mặc định*/
+   font-weight: 300;
+
+}
+
+.header__navbar-item--strong{
+   font-weight: 600;
+}
+
+.header__navbar-item--seperate::after{ /* tạo thanh gạch thẳng chỗ vào cửa hàng và đăng ký */
+   content:"";
+   display: block;
+   position: absolute;
+   width: 1px;
+   height: 15px;
+   background-color: #f86856;
+   right: -9px;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+.header__navbar-item:hover, 
+.header__navbar-icon-link:hover,
+.header__navbar-item-link:hover{
+   /*khi rê chuột vào các chữ và icon , item được đặc thuộc tính này 
+   thì sẽ xuất hiện màu mờ đi, màu trắng và xuất hiện cursor*/
+   cursor: pointer;
+   color: rgba(255,255,255,0.7);
+
+}
+
+.header__navbar-icon-link{ /*tạo màu trắng và bỏ gạch chân cho icon fb, ins*/
+   color: var(--white-color);
+   text-decoration: none;
+
+}
+
+.header__navbar-icon-link,
+.fa-solid,
+ .fa-bell,
+.fa-question
+{
+   font-size: 1.6rem; /* tăng kích thước các icon*/
+   margin: 0 4px; /* tạo khoảng cách cho 2 icon fb và insta, cũng như 
+   các icon khác*/
+}
+
+.header__navbar-item, 
+.header__navbar-item-link, 
+.header__navbar-icon-link{
+   display: inline-flex;  /* cho icon và dòng chữ nằm trên cùng hàng, chữ nằm giữa hàng icon*/
+   align-items: center;
+
+}
+
+.header__navbar-title--no-pointer{
+   cursor: text; /* khi rơ chuột vào chữ 'kết nối' sẽ hiện kiểu con trỏ text
+   chứ ko hiện bàn tay*/
+   color: var(--white-color); /* bỏ màu mờ mờ cho chữ 'kết nối'*/
+}
+
+
+/* sau đây là header QR code*/
+.header__qr{
+
+   background-color: var(--white-color);
+   width: 186px;
+   position: absolute;
+   left: 0;
+   top: 118%; /*top: 118% để các hình qr, ch play . app store
+   nằm trọn trong thẻ li chứa các hình này*/
+   padding: 8px;
+   border-radius: 2px;
+   display: none; /* không hiển thị phần mã QR và hai hình app nếu không rê chuột vào chữ ' vào cừa hàng trên ung dung'
+   nhưng khi viết display: none xong thì coi như toàn bộ thuộc tính , hình ảnh của qr và 2 hình app sẽ coi như
+   không tồn tại , không có nên ta phải viết thêm 1 trường hợp css cho việt rơ chuột vào sẽ hiện lên hình mã qr và 2 hình app, viết bên trên
+   chỗ .header__navbar-item--has-qr:hover .header__qr*/
+   animation: fadeIn ease-in 0.5s; /* liên kết animation đã viết bên file base.css tên fadeIn , animation kiểu
+   hiển thị sau 1 thời gian là 0.5  khi bắt đầu rê chuột vào*/
+}
+
+.header__qr::before /* tạo pseudo class cho .header
+__qr, dùng để dời toàn bộ hình có class .header__qr xuống 1 chút so với chữ và cách đều với mép trên so với chữ, cũng như
+tạo cầu nối trong suốt không màu khi rơ chuột vào chữ sẽ hiện ra  hình mã qr , nếu không có css dưới đây sẽ bi vấn đề rơ chuột vào 
+nhưng không có cầu nối đủ dài sẽ không nhấn vào mã qr được , chi tiết xem lại video 46/111 tầm phút 24 trở đi*/
+{
+ position: absolute;
+ left: 0;
+ top: -16px;
+ width: 100%;
+ height: 20px;
+ content: "";
+ display: block;
+ 
+}
+
+.header__qr-img{
+   width: 100%; /* hình QR chiếm 100% thẻ chứa nó , là thẻ li*/
+}
+
+.header__qr-apps{
+ display: flex; /* display flex để cho 2 hinh ảnh app store và ch play ngang hàng*/
+justify-content: space-between;/* đẩy 2 hình app store và ch play ra sát khung 2 bên*/
+
+}
+.header__qr-link:nth-child(1) /*hoặc ghi .header__qr-link:first-child cũng được, cả 2 cách đều 
+để hiện thị cho việc đang đặc thuộc tính css cho class có tên là 
+.header__qr-link nhưng thêm nth-child(1) hoặc first-child để phân biệt đang làm cho 
+cái đầu tiên, chứ ko phải cái thứ 2 , vì cái thứ 1 và cái thứ 2  đều trùng tên class là .header__qr-link */
+
+{
+margin-left: 11px;  /* dời hình app store về bên trái , thẳng hàng với mép hình QR*/
+}
+
+.header__qr-link:nth-child(2)
+{
+   margin-right: 11px;/* dời hình ch play về bên trái , thẳng hàng với mép hình QR*/
+}
+
+.header__qr-dowload-img{
+height: 13px;
+}
+
+/*header notification*/
+
+.header__notify{
+position: absolute;
+top: 118%;
+right: 0;
+width: 404px;
+border: 1px solid gray;
+background-color: var(--white-color);
+cursor: default;
+transform-origin: calc(100% - 20px) top; /* dịch chuyển vị trí xuất hiện đầu tiên của animation*/
+animation: headerNotifyGrowth ease-in 0.2s;
+will-change: opacity, transform;/* nói cho trình duyệt biết là sẽ có thuộc tính gì của animation sẽ thay đổi, hay dễ hiểu hơn là trình duyệt sẽ tối ưu cho opacity và transforn của .header__notify*/
+display: none;
+}
+
+@keyframes headerNotifyGrowth {
+   from{
+      opacity: 0;
+      transform: scale(0);/* điểm đầu rất nhỏ*/
+   }
+   to
+   {
+      opacity: 1;
+      transform: scale(1);
+} /* điểm sau trở về kích thước ban đầu*/
+}
+
+.header__notify::before{
+   content: "";
+   border-width: 20px 26px;
+   border-style: solid;
+   border-color: transparent transparent var(--white-color) transparent;
+   position: absolute;
+   right: 4px; /* chỗ này chỉnh cho mũi tên chỗ list thông báo sản phẩm nằm giữa chữ thông báo*/
+   top: -29px;
+}
+
+.header__notify::after{ /* chỗ này dùng để mở rộng vùng rê chuột cho 'Thông báo' , để người dùng
+   dù rê chuột xéo hay dọc vào chữ'Thông báo' đều hiện ra list sản phẩm bên dưới*/
+   
+   content: "";
+   display: block;
+   position: absolute;
+   right: 0;
+   top:-16px;
+   width: 90px;
+   height: 20px;
+   /*background-color: red;*/ /* màu chỗ này để test độ rộng vùng rê chuột chỗ thông báo*/
+}
+
+.header__notify-link{
+height: 60px; /* chỗ này chỉnh độ cao của khung chứa hình
+ để chữ không bị tràn xuống quá ô khác*/
+background-color: var(--white-color);
+}
+
+.header__notify-header  h3{
+
+   color: #999;
+   margin: 0 0 0 12px; /* do mặc định thẻ h3 có khoảng margin ở top và bottom, nên ta bỏ vì ở đây không muốn xài*/
+   font-weight: 400;
+   font-size: 1.4rem; /* font size cho chữ thì thường xài rem*/
+   line-height: 40px; /* do .header__notify-header  h3 bị chứa trong .header__notify-link có height là 40px nên trong 
+   .header__notify-header  h3 khi cho line-height là 40px thì chữ sẽ nằm giữa trong khung*/
+   cursor: text;
+   
+}
+ 
+.header__notify-list{
+   padding-left: 0;
+
+}
+.header__notify-item{
+   display: flex;
+}
+
+
+.header__notify-item:hover{
+   background-color: #f7f7f7; /* màu này hiện ra khi hover vào mục thông báo*/
+}
+
+.header__notify-item--viewed{
+   background-color: rgba(238, 75, 43, 0.09); 
+
+
+}
+
+.header__notify-link{
+   display: flex;  /* cho chữ Mỹ phẩm chính hãng Mô tả mỹ phẩm nằm ngang hàng với hình*/
+   width: 100%;
+   padding : 12px;
+   text-decoration: none;
+   background-color: rgba(238, 75, 43, 0.09); /* đây là màu chỗ mục thông báo các sản phẩm lúc chưa bấm vào xem*/
+
+
+}
+.header__notify-img{
+   width: 48px;
+   object-fit: contain; /* dùng object-fit: contain để hình không bị biến dạng kích thước khi có display flex*/
+
+}
+
+.header__notify-info{
+   margin-left: 12px;
+}
+
+.header__notify-name{
+display: block; /* ở đây display : block để cho 2 nội dung trong thẻ span 
+<span class="header__notify-name">Mỹ phẩm chính hãng</span>
+                                                <span class="header__notify-description">Mô tả mỹ phẩm</span>
+
+ sẽ cách ra 2 dòng riêng biệt , không bị nằm 1 hàng*/
+ font-size: 1.4rem;
+ color: var(--text-color);
+ line-height: 1.7rem;
+ font-weight: 500;
+}
+
+.header__notify-description{
+
+   display: block;/* ở đây display : block để cho 2 nội dung trong thẻ span 
+   <span class="header__notify-name">Mỹ phẩm chính hãng</span>
+                                                   <span class="header__notify-description">Mô tả mỹ phẩm</span>
+   
+    sẽ cách ra 2 dòng riêng biệt , không bị nằm 1 hàng*/
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #817f7b;
+    margin-top: 4px;
+
+}
+
+.header__notify-footer{
+   display: flex;
+
+}
+.header__notify-footer-btn{
+   text-decoration: none;
+   color: var(--text-color);
+   width: 100%;
+   padding: 8px 0; 
+   font-size: 1.4rem;
+   font-weight: 100;
+   text-align: center;
+}
+/*authen modal*/
+
+.auth-form{
+   width: 500px;
+   background-color: var(--white-color);
+   border-radius: 5px;
+   overflow: hidden; /* tức là chỗ phần khung dưới chưa google và facebook, thuộc tính con khi vượt quá thuộc
+   tính cha chứa nó( cha chứa con ) thì thuộc tính con sẽ bị hidden, ở đây thuộc tính cha có bo góc nhưng
+   thuộc tính con lại không có bo góc , hiển thị che thuộc tính cha nên thuộc tính con sẽ bị hidden
+   khi có overflow: hidden*/
+}
+
+.auth-form__container{
+ padding: 0 32px; /*  trên dưới là 0, trái phải là 32 px*/ 
+}
+.auth-form__header{
+   display: flex;
+   align-items: center;/* cho đăng nhập và đăng ký thẳng hàng*/
+   justify-content: space-between; /*cách đều nhau */
+   padding: 0 12px;
+   margin-top: 10px;
+
+}
+.auth-form__heading{
+   font-size: 2.2rem;
+   font-weight: 400;
+   color: var(--text-color);
+}
+.auth-form__switch-btn{
+   font-size: 1.6rem;
+   font-weight: 500;
+   color: var(--primary-color);
+   cursor: pointer;
+}
+
+.auth-form__form{
+
+}
+.auth-form__input{
+   width: 100%;
+   height: 40px;
+   margin-top: 16px;
+   padding: 0 12px;
+   font-size: 1.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;/*bỏ outline cho các khung nhập email, mật khẩu*/
+
+}
+
+.auth-form__input:focus{
+   border-color: #888;
+}
+
+.auth-form__aside{
+   margin-top: 18px;
+
+}
+.auth-form__policy-text{
+   font-size: 1.2rem;
+   line-height: 1.7rem;
+   text-align: center;
+   padding: 0 12px;
+}
+.auth-form__text-link{
+   text-decoration: none;
+   color: var(--primary-color);
+
+}
+
+.auth-form__controls{
+   display: flex;
+   justify-content: flex-end;
+margin-top: 80px;
+}
+
+
+.auth-form__controls-back{
+   margin-right: 8px;
+}
+
+
+.auth-form__socials{
+   background-color: #f5f5f5;
+   padding: 16px 36px;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 22px ;
+}
+
+.auth-form__socials-icon{
+   font-size: 1.4rem;
+
+}
+
+.auth-form__socials--facebook{
+   color: var(--white-color);
+   background-color: #3a5a98;
+}
+
+.auth-form__socials--facebook
+.auth-form__socials-icon{
+   color: var(--white-color);
+}
+.auth-form__socials-title{
+   margin: 0 36px;
+}
+.auth-form__socials--google{
+   color: #666;
+   background-color: var(--white-color);
+}
+.auth-form__help{
+   display: flex;
+   justify-content: flex-end;
+
+}
+.auth-form__help-link{
+   font-size: 1.4rem;
+   text-decoration: none;
+   color: #939393;
+}
+.auth-form__help-seperate{
+   display: block;
+   height: 20px;
+   margin: 1px 16px 0;
+   border-left: 1px solid #EAEAEA;
+
+}
+.auth-form__help-forgot{
+   color: var(--primary-color);
+
+}

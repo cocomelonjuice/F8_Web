@@ -1,0 +1,240 @@
+
+<!-- xong video 56 -->
+
+<!DOCTYPE html>  <!--tạo nhanh bằng 
+cách nhấn ! và enter-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.1.1-web/css/all.min.css"><!--link thư viện font vào HTNL-->
+
+</head>
+<body>
+    <div class="app">
+
+        <header class="header">
+            <div class="grid">
+
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--seperate">
+                            Vao cua hang tren ung dung
+
+                            <!--header QR code-->
+                            <div class="header__qr">
+                                <img src="./assets/img/QR.png" alt="QR code" class="header__qr-img"> <!--chèn ảnh QR vào hover 'vào cửa hàng trên ung dung'-->
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link"> 
+                                    <!-- ở đây ta bỏ thẻ img ở dưới vào thẻ a href trên đây vì nếu ko dùng thẻ a href mà chỉ có thẻ img ở dưới
+                                    thì khi dùng display:  flex ( để hình ảnh được nằm cùng 1 hàng) bên file css main , hình trong thẻ img này sẽ bị giãn ra so với ảnh gốc-->
+                                      <!-- chỗ a href="" thì sau này khi có link để dowload app thì copy link vào trong ''-->
+
+                                        <img src="./assets/img/apple.png" alt="Apple Store" class="header__qr-dowload-img"> <!--chèn ảnh app store vào hover 'vào cửa hàng trên ung dung'-->
+                                    </a>
+                                    
+                                    <a href="" class="header__qr-link"> 
+                                        <!-- ở đây ta bỏ thẻ img ở dưới vào thẻ a href trên đây vì nếu ko dùng thẻ a href mà chỉ có thẻ img ở dưới
+                                        thì khi dùng display:  flex ( để hình ảnh được nằm cùng 1 hàng) bên file css main , hình trong thẻ img này sẽ bị giãn ra so với ảnh gốc-->
+                                          <!-- chỗ a href="" thì sau này khi có link để dowload app thì copy link vào trong ''-->
+                                          <img src="./assets/img/CH play.png" alt="CH Play" class="header__qr-dowload-img"> <!--chèn ảnh CH play vào hover 'vào cửa hàng trên ung dung'-->
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </li><!--đặt tên class theo chuẩn BEM-->
+                        <li class="header__navbar-item">
+                           <span class="header__navbar-title--no-pointer">Kết nối</span> <!--không hiển thị dấu bàn tay khi di chuột vào chữ 'kết nối'-->
+                            <a href="" class="header__navbar-icon-link"> 
+                                <i class="fa-brands fa-facebook-square"></i> <!--tạo icon facebook từ search thư viện web fotnawesome-->
+                            </a>
+                            <a href="" class="header__navbar-icon-link"> 
+                                <i class="fa-brands fa-instagram-square"></i> <!--tạo icon instagram từ search thư viện web fotnawesome-->
+                            </a>
+                        </li>
+                    </ul>
+    
+                   
+                    <ul class="header__navbar-list">  <!--ghi nhanh 4 dong li ở dưới băng cách bấm li.header__navbar-item*4 rồi tab enter-->
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="fa-solid fa-bell"></i>  <!--tạo icon từ search thư viện web fotnawesome-->
+                                Thông báo
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3> Thông báo mới nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://lh4.googleusercontent.com/-lQoKXLTpacI/Vrb3bYVmPNI/AAAAAAAAEVE/EzZhatRx67o/s1600/Cac-loai-kem-Ohui-Han-Quoc-duoc-chi-em-ua-chuong-nhat.png" alt="" class="header__notify-img"> 
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm chính hãng nguồn gốc tự nhiên nhập khẩu trực tiếp từ Trung Quốc</span>
+                                                <span class="header__notify-description">Mô tả mỹ phẩm</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">  <!--chỗ này nếu thêm class header__notify-item--viewed như trên thì sẽ hiện màu giống trên chỗ mục thông báo khi hover vào-->
+                                            <img src="https://lh4.googleusercontent.com/-lQoKXLTpacI/Vrb3bYVmPNI/AAAAAAAAEVE/EzZhatRx67o/s1600/Cac-loai-kem-Ohui-Han-Quoc-duoc-chi-em-ua-chuong-nhat.png" alt="" class="header__notify-img"> 
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm chính hãng</span>
+                                                <span class="header__notify-description">Mô tả mỹ phẩm</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link"> <!--chỗ này nếu thêm class header__notify-item--viewed như trên thì sẽ hiện màu giống trên chỗ mục thông báo khi hover vào-->
+                                            <img src="https://lh4.googleusercontent.com/-lQoKXLTpacI/Vrb3bYVmPNI/AAAAAAAAEVE/EzZhatRx67o/s1600/Cac-loai-kem-Ohui-Han-Quoc-duoc-chi-em-ua-chuong-nhat.png" alt="" class="header__notify-img"> 
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm chính hãng</span>
+                                                <span class="header__notify-description">Mô tả mỹ phẩm</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="" class="header__notify-footer-btn"> Xem tất cả</a>
+                                </footer>
+                        
+                                
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="fa-solid fa-question"></i> <!--tạo icon từ search thư viện web fotnawesome-->
+                                Trợ giúp
+                            </a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--seperate">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>  
+    
+                    </ul>
+                </nav>
+            </div>
+            
+        </header>
+
+        <div class="container"></div>
+        <div class="footer">  </div>
+
+    </div>
+    <!--modal layout cho khung đăng nhập-->
+    <!-- <div class="modal">
+        <div class="modal_overlay"></div>
+                <div class="modal_body"> -->
+            
+           
+                                                      <!-- Register form-->
+                    <!-- <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng ký</h3>
+                                <span class="auth-form__switch-btn">Đăng nhập</span>
+                            </div>
+            
+                            <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" placeholder="Nhập email">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                                </div>
+            
+                            </div>
+            
+                                <div class="auth-form__aside">
+                                    <p class="auth-form__policy-text">
+                                        Bằng việc đăng ký như trên, bạn đã đống ý với S-Shopee về các nội dung bao gồm...
+                                        <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                        <a href="" class="auth-form__text-link">Chính sách bảo mật</a>                        
+                                    </p>
+                                </div>
+
+                                <div class="auth-form__controls">
+                                        <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
+                                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                                </div>
+                        </div>
+
+                        
+
+                            <div class="auth-form__socials">
+                                <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                    <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                                <span class="auth-form__socials-title"> Kết nối với FACEBOOK</span>
+                                </a>
+
+                                <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                    <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                    <span class="auth-form__socials-title"> Kết nối với GOOGLE</span>
+                                </a>
+                            </div>
+                    </div> -->
+           
+                                <!-- Login form-->
+                                 <!-- <div class="auth-form">
+                                    <div class="auth-form__container">
+                                        <div class="auth-form__header">
+                                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                                            <span class="auth-form__switch-btn">Đăng ký</span>
+                                        </div>
+                        
+                                        <div class="auth-form__form">
+                                            <div class="auth-form__group">
+                                                <input type="text" class="auth-form__input" placeholder="Nhập email">
+                                            </div>
+                                            <div class="auth-form__group">
+                                                <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                                            </div>
+                                            
+            
+                                        </div>
+                        
+                                            <div class="auth-form__aside">
+                                                <div class="auth-form__help">
+                                                    <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                                    <span class="auth-form__help-seperate"></span>
+                                                    <a href="" class="auth-form__help-link">Cần trợ giúp.</a>
+
+                                                </div>
+                                            </div>
+            
+                                            <div class="auth-form__controls">
+                                                    <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
+                                                    <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                                            </div>
+                                    </div>
+            
+                                    
+            
+                                        <div class="auth-form__socials">
+                                            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                                <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                                            <span class="auth-form__socials-title"> Kết nối với FACEBOOK</span>
+                                            </a>
+            
+                                            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                                <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                                <span class="auth-form__socials-title"> Kết nối với GOOGLE</span>
+                                            </a>
+                                        </div>
+                                </div>
+
+                </div>
+    </div> -->
+</body>
+</html>
+
